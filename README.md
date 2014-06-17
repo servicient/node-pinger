@@ -22,5 +22,5 @@ npm start
 Maintained by
 -------------
 
-MTL Dev
-lukewendling
+- MTL Dev
+- lukewendling
