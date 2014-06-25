@@ -19,8 +19,15 @@ npm install
 npm start
 ```
 
+Run tests
+---------
+
+```
+npm test
+```
+
 Maintained by
 -------------
 
-- MTL Dev
+- Servicient / MTL Dev
 - lukewendling
