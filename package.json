@@ -1,11 +1,12 @@
 {
   "name": "node-pinger",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "private": "true",
   "description": "Just another uptime pinging service.",
   "main": "app.js",
   "scripts": {
-    "start": "node app.js"
+    "start": "node app.js",
+    "test": "mocha --reporter min --growl --watch"
   },
   "repository": {
     "type": "git",
@@ -32,5 +33,9 @@
     "net-ping": "^1.1.10",
     "request-json": "^0.4.10",
     "union": "^0.4.0"
+  },
+  "devDependencies": {
+    "chai": "^1.9.1",
+    "mocha": "^1.20.1"
   }
 }
