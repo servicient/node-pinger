@@ -5,6 +5,6 @@ var pinger = require('../lib/pinger');
 
 describe('pinger', function() {
   describe('api', function() {
-    expect(pinger({interval: 3})).to.respondTo('start');
+    expect(pinger([], {interval: 3})).to.respondTo('start');
   });
 });

@@ -2,6 +2,7 @@
 
 var log = require('./lib/utils').log;
 var env = process.env.NODE_ENV;
+var sites = require('./lib/sites');
 var pinger = require('./lib/pinger');
 var Frontend = require('./lib/frontend');
 
@@ -12,12 +13,19 @@ if (env === 'production') {
   dotenv.load();
 }
 
-var worker = pinger({ 
-  interval: process.env.INTERVAL
-});
+sites({db: process.env.DB}).all(run);
 
-var frontend = new Frontend({port: process.env.PORT});
+function run(sites) {
+  var worker = pinger(sites,
+    { 
+      interval: process.env.INTERVAL
+    });
+  var frontend = new Frontend(sites,
+    {
+      port: process.env.PORT
+    });
 
-// worker and frontend run side-by-side
-worker.start();
-frontend.start();
+  // worker and frontend run side-by-side
+  worker.start();
+  frontend.start();
+}
