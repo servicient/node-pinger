@@ -13,7 +13,10 @@ if (env === 'production') {
   dotenv.load();
 }
 
-sites({db: process.env.DB}).all(run);
+sites({db: process.env.DB})
+  .all()
+  .then(run, 
+    function (err) { log(err); });
 
 function run(sites) {
   var worker = pinger(sites,

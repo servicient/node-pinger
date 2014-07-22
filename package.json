@@ -31,6 +31,7 @@
     "flatiron": "^0.3.11",
     "mongodb": "^1.4.5",
     "net-ping": "^1.1.10",
+    "promise": "^5.0.0",
     "request-json": "^0.4.10",
     "union": "^0.4.0"
   },
