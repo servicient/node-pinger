@@ -5,8 +5,13 @@ var EmailNotifier = require('../lib/email_notifier');
 
 describe('EmailNotifier', function() {
   describe('contructor', function() {
-    it('creates an instance', function() {
+    it('invoked with new', function() {
       var emailNotifier = new EmailNotifier({});
+      expect(emailNotifier).to.be.instanceof(EmailNotifier);
+    });
+
+    it('invoked without new', function() {
+      var emailNotifier = EmailNotifier({});
       expect(emailNotifier).to.be.instanceof(EmailNotifier);
     });
 
